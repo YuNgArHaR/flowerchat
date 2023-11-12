@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FlowerChat</title>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <script type="module" src="auth.js"></script>
+    <script src="tabs.js"></script>
+    <script type="module" src="updatepfp.js"></script>
+    <script type="module" src="search.js"></script>
+  </head>
+  <body>
+    <div id="splash-screen">
+      <h1>Loading...</h1>
+    </div>
+
+    <!-- <div class="message-mate">
+      <p class="message-text">lox</p>
+      <span class="message-time">14:14</span>
+    </div>
+    <div class="message-your">
+    <p class="message-text">sam lox 123123213</p>
+      <span class="message-time">14:15</span>
+    </div>
+    <div class="message-your">
+      <img class="message-img" src="img/msg_1.jpg" alt="" />
+      <span class="message-time">14:16</span>
+    </div>
+    <div class="message-mate">
+      <img class="message-img" src="img/avatar.png" alt="" />
+      <span class="message-time">14:17</span>
+    </div> -->
+
+
+    <div class="background" id="background">
+      <div class="container" id="content">
+        <div class="panel">
+          <div class="panel__left">
+            <div
+              style="display: flex; justify-content: space-between; width: 90%"
+            >
+            <img class="user-card__img" id="user-img" alt="" />
+              <div style="width: 100%; display: flex; flex-direction: column">
+                <h1 class="welcome" id="welcome"></h1>
+                <div style="display: flex; justify-content: center">
+                  <button class="butt-change-ava" id="upload-button">Cменить аватар
+                  </button>
+                  <input type="file" style="display: none;" id="file-input">
+                  <button class="butt-exit" id="logout-btn">Выход</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel__left__search">
+              <h1 class="panel__left__search-text">Поиск пользователей</h1>
+              <div class="panel__left__search__form search-form">
+                <input
+                  class="search-form__input"
+                  type="text"
+                  placeholder="Имя пользователя"
+                  id="query-text"
+                />
+                <button class="search-form__butt" id="search-btn">Поиск</button>
+                <div class="user-search" id="search-results">
+
+                  <div class="user-card">
+                    <img src="img/avatar.png" class="user-card__img" />
+                    <div class="user-card__name-message">
+                      <h1 class="user-card__name-message__name">[name]</h1>
+                      <h1 class="user-card__name-message__message">
+                        [online\offline]
+                      </h1>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="chat-el-location" class="panel__left__search__search">
+                <div id="chats-history" class="panel__left__search__search__search">
+
+                  <!-- <div class="user-card active-card">
+                    <img src="img/avatar.png" class="user-card__img" />
+                    <div class="user-card__name-message">
+                      <h1 class="user-card__name-message__name">[name]</h1>
+                      <h1 class="user-card__name-message__message">
+                        [who]: [message]
+                      </h1>
+                    </div>
+                    <h1 class="user-card__date">
+                      <span class="unreaded">2</span><br />12:49
+                    </h1>
+                  </div> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel__right">
+
+            <div id="chat" class="panel__right__bg">
+
+              <h1 class="empty-chat">Выберите, кому хотели бы написать...</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ВХОД -->
+      <div class="tab-container" id="tab-container-id">
+        <div class="container">
+          <div class="tab-buttons-div">
+            <button class="tab-button" onclick="openTab('tab2')">Вход</button>
+            <button class="tab-button" onclick="openTab('tab1')">
+              Регистрация
+            </button>
+          </div>
+
+          <div id="tab2" class="tab-content">
+            <h1 class="reg-text">Войдите в аккаунт</h1>
+            <div class="registration">
+              <input
+                class="registration__input"
+                maxlength="60"
+                type="text"
+                placeholder="Email"
+                id="login-email"
+              />
+              <input
+                class="registration__input"
+                maxlength="40"
+                type="text"
+                placeholder="Пароль"
+                id="login-pass"
+              />
+              <div class="registration__buttons">
+                <button
+                  class="registration__buttons__button reg plus-2"
+                  id="login-btn"
+                >
+                  Войти
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="tab1" class="tab-content">
+            <h1 class="reg-text">Создайте аккаунт</h1>
+            <div class="registration">
+              <input
+                id="email"
+                class="registration__input"
+                maxlength="60"
+                type="text"
+                placeholder="Email"
+              />
+              <input
+                id="username"
+                class="registration__input"
+                maxlength="30"
+                type="text"
+                placeholder="Имя пользователя"
+              />
+              <input
+                id="pass"
+                class="registration__input"
+                maxlength="40"
+                type="text"
+                placeholder="Пароль"
+              />
+              <div class="registration__buttons">
+                <button
+                  class="registration__buttons__button reg plus-2"
+                  id="register-btn"
+                >
+                  Зарегистрироваться
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
